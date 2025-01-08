@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
+using UnityEditor;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.UIElements;
@@ -22,6 +23,7 @@ public class GameManager : MonoBehaviour
     float NextTimeCheck = 1;
     public Building[] Buildings;
     public int ClickPower = 1;
+    public PopUp PopUp;
 
 
     // Start is called before the first frame update
@@ -32,6 +34,7 @@ public class GameManager : MonoBehaviour
         Catnb = 0;
         MaxScore = 0;
         niveau = 0;
+        PopUp.createPopUp();
     }
 
     private void Awake()
@@ -54,6 +57,7 @@ public class GameManager : MonoBehaviour
             Catnb = 0;
         }
         Catimage.sprite = Sprites[Catnb];
+        PopUp.createPopUp();
     }
     public bool PurchaseAction(int cost)
     {

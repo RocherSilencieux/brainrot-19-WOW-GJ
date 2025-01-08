@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using TMPro;
 using UnityEngine;
 
@@ -12,6 +13,8 @@ public class Building : MonoBehaviour
     public float ScorePerUpgrade = 0.1f;
     public int level = 0;
     public GameManager manager;
+    public PopUp PopUp;
+    public Sprite sprite;
 
     int calculatePrice()
     {
@@ -35,6 +38,7 @@ public class Building : MonoBehaviour
         if (PurchaseSuccess)
         {
             level++;
+            PopUp.PopUpSprites.Append(sprite);
             updateUI();
         }
     }
@@ -42,11 +46,5 @@ public class Building : MonoBehaviour
     void Start()
     {
         updateUI();
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
     }
 }

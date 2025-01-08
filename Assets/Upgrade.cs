@@ -10,6 +10,7 @@ public class Upgrade : MonoBehaviour
     public GameObject Upgrades;
     public TMP_Text Description;
     public TMP_Text PriceUpgrade;
+    public Sprite[] Sprites;
     public void CursorUpgrade()
     {
        if (manager.Score > Cost)
