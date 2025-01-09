@@ -17,6 +17,7 @@ public class Upgrade : MonoBehaviour, IPointerEnterHandler
     public void OnPointerEnter(PointerEventData eventData)
     {
         GameObject.Find("UpgradeDescription").GetComponent<TMP_Text>().text = Description.text;
+        GameObject.Find("PriceUpg").GetComponent<TMP_Text>().text = "Price : "+Cost;
     }
     public void CursorUpgrade()
     {
@@ -117,7 +118,7 @@ public class Upgrade : MonoBehaviour, IPointerEnterHandler
         if (manager.Score > Cost)
         {
             manager.Score -= Cost;
-            manager.Buildings[4].ScorePerUpgrade *= 2;
+            manager.Buildings[4].ScorePerUpgrade *= 3;
             Upgrades.transform.GetChild(10).gameObject.SetActive(false);
         }
     }
@@ -126,7 +127,7 @@ public class Upgrade : MonoBehaviour, IPointerEnterHandler
         if (manager.Score > Cost)
         {
             manager.Score -= Cost;
-            manager.Buildings[4].ScorePerUpgrade *= 2;
+            manager.Buildings[5].ScorePerUpgrade *= 3;
             Upgrades.transform.GetChild(11).gameObject.SetActive(false);
         }
     }

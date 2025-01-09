@@ -5,7 +5,6 @@ using UnityEditor;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.UIElements;
-using static UnityEditor.Timeline.TimelinePlaybackControls;
 
 public class GameManager : MonoBehaviour
 
@@ -21,9 +20,12 @@ public class GameManager : MonoBehaviour
     public int niveau;
     public GameObject Content;
     float NextTimeCheck = 1;
+    float NextTimeCheck2 = 1;
     public Building[] Buildings;
     public int ClickPower = 1;
     public PopUp PopUp;
+    public int cpt = 0;
+    public bool cat = true;
 
 
     // Start is called before the first frame update
@@ -34,7 +36,6 @@ public class GameManager : MonoBehaviour
         Catnb = 0;
         MaxScore = 0;
         niveau = 0;
-        PopUp.createPopUp();
     }
 
     private void Awake()
@@ -57,7 +58,6 @@ public class GameManager : MonoBehaviour
             Catnb = 0;
         }
         Catimage.sprite = Sprites[Catnb];
-        PopUp.createPopUp();
     }
     public bool PurchaseAction(int cost)
     {
@@ -97,9 +97,25 @@ public class GameManager : MonoBehaviour
         }
     }
 
+    IEnumerator end()
+    {
+        Destroy(GameObject.Find("devantlechat"));
+        GameObject.Find("1").transform.GetChild(0).gameObject.SetActive(true);
+        GameObject.Find("1").transform.GetChild(1).gameObject.SetActive(true);
+        yield return new WaitForSeconds(3);
+        GameObject.Find("2").transform.GetChild(0).gameObject.SetActive(true);
+        GameObject.Find("2").transform.GetChild(1).gameObject.SetActive(true);
+        GameObject.Find("2").transform.GetChild(2).gameObject.SetActive(true);
+    }
+
     // Update is called once per frame
     void Update()
     {
+        if (GameObject.FindGameObjectsWithTag("popup").Length > 75 && cat)
+        {
+            StartCoroutine(end());
+            cat = false;
+        }
         updateSPSUI();
         updateTotalScoreUI();
         updateMaxScore();
@@ -107,6 +123,17 @@ public class GameManager : MonoBehaviour
         {
             IdleCalculate();
             NextTimeCheck = Time.timeSinceLevelLoad + 1f;
+        }
+        if (NextTimeCheck2 < Time.timeSinceLevelLoad)
+        {
+            if (SPS != 0)
+            {
+                for (int i = 0; i < SPS / 10; i++)
+                {
+                    PopUp.createPopUp();
+                }
+                NextTimeCheck2 = Time.timeSinceLevelLoad + 1f;
+            }
         }
         //    if (MaxScore >= 15 && niveau < 1)
         //{

@@ -15,7 +15,8 @@ public class Building : MonoBehaviour
     public int level = 0;
     public GameManager manager;
     public PopUp PopUp;
-    public Image image;
+    public Image imagelogo;
+    public int mage;
 
     int calculatePrice()
     {
@@ -40,7 +41,6 @@ public class Building : MonoBehaviour
         {
             level++;
             updateUI();
-            PopUp.PopUpSprites.Append(image.sprite);
         }
     }
     // Start is called before the first frame update

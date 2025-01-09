@@ -357,7 +357,7 @@ GameObject:
   - component: {fileID: 1960786238854498759}
   - component: {fileID: 2916933961408830726}
   m_Layer: 5
-  m_Name: image
+  m_Name: imagelogo
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -597,8 +597,9 @@ MonoBehaviour:
   ScorePerUpgrade: 0.1
   level: 0
   manager: {fileID: 0}
-  PopUp: {fileID: 8707946272507029233, guid: 6a3d0f0e1d15bcb4a9868f0df7a172a6, type: 3}
-  image: {fileID: 5081476725108992843}
+  PopUp: {fileID: 0}
+  imagelogo: {fileID: 5081476725108992843}
+  mage: 0
 --- !u!1 &9064522816253721560
 GameObject:
   m_ObjectHideFlags: 0
