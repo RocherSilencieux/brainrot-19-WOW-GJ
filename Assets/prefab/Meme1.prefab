@@ -597,8 +597,8 @@ MonoBehaviour:
   ScorePerUpgrade: 0.1
   level: 0
   manager: {fileID: 0}
-  PopUp: {fileID: 0}
-  sprite: {fileID: 0}
+  PopUp: {fileID: 8707946272507029233, guid: 6a3d0f0e1d15bcb4a9868f0df7a172a6, type: 3}
+  image: {fileID: 5081476725108992843}
 --- !u!1 &9064522816253721560
 GameObject:
   m_ObjectHideFlags: 0

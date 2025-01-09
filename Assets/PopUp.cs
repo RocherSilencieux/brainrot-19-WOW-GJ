@@ -22,6 +22,7 @@ public class PopUp : MonoBehaviour
         Vector3 position =  new Vector3 (x, y, 0);
         GameObject popUp = Instantiate(PopUpPrefab, position, quaternion.identity);
         popUp.transform.parent = canvas;
+        PopUpImage.sprite = PopUpSprites[UnityEngine.Random.Range(0, PopUpSprites.Length)];
         StartCoroutine(popuptime(popUp));
         Destroy(popUp,5f);
 
@@ -40,6 +41,5 @@ public class PopUp : MonoBehaviour
     // Update is called once per frame
     void Start()
     {
-        PopUpImage.sprite = PopUpSprites[UnityEngine.Random.Range(0, PopUpSprites.Length-1)];
     }
 }

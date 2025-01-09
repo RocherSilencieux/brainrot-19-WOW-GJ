@@ -1,9 +1,11 @@
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
+using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.EventSystems;
 
-public class Upgrade : MonoBehaviour
+public class Upgrade : MonoBehaviour, IPointerEnterHandler
 {
     public int Cost = 10;
     public GameManager manager;
@@ -11,6 +13,11 @@ public class Upgrade : MonoBehaviour
     public TMP_Text Description;
     public TMP_Text PriceUpgrade;
     public Sprite[] Sprites;
+
+    public void OnPointerEnter(PointerEventData eventData)
+    {
+        GameObject.Find("UpgradeDescription").GetComponent<TMP_Text>().text = Description.text;
+    }
     public void CursorUpgrade()
     {
        if (manager.Score > Cost)

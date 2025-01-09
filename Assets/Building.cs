@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using TMPro;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Building : MonoBehaviour
 {
@@ -14,7 +15,7 @@ public class Building : MonoBehaviour
     public int level = 0;
     public GameManager manager;
     public PopUp PopUp;
-    public Sprite sprite;
+    public Image image;
 
     int calculatePrice()
     {
@@ -38,8 +39,8 @@ public class Building : MonoBehaviour
         if (PurchaseSuccess)
         {
             level++;
-            PopUp.PopUpSprites.Append(sprite);
             updateUI();
+            PopUp.PopUpSprites.Append(image.sprite);
         }
     }
     // Start is called before the first frame update

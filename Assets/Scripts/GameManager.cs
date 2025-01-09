@@ -108,35 +108,35 @@ public class GameManager : MonoBehaviour
             IdleCalculate();
             NextTimeCheck = Time.timeSinceLevelLoad + 1f;
         }
-            if (MaxScore >= 15 && niveau < 1)
-        {
-            Content.transform.GetChild(0).GetChild(0).gameObject.SetActive(true);
-            niveau++;
-        }
-        else if (MaxScore > 100 && niveau < 2)
-        {
-            Content.transform.GetChild(0).GetChild(1).gameObject.SetActive(true);
-            niveau++;
-        }
-        else if (MaxScore > 200 && niveau < 3)
-        {
-            Content.transform.GetChild(0).GetChild(2).gameObject.SetActive(true);
-            niveau++;
-        }
-        else if (MaxScore > 1000 && niveau < 4)
-        {
-            Content.transform.GetChild(0).GetChild(3).gameObject.SetActive(true);
-            niveau++;
-        }
-        else if (MaxScore > 10000 && niveau < 5)
-        {
-            Content.transform.GetChild(0).GetChild(4).gameObject.SetActive(true);
-            niveau++;
-        }
-        else if (MaxScore > 100000 && niveau < 6)
-        {
-            Content.transform.GetChild(0).GetChild(5).gameObject.SetActive(true);
-            niveau++;
-        }
+        //    if (MaxScore >= 15 && niveau < 1)
+        //{
+        //    Content.transform.GetChild(0).GetChild(0).gameObject.SetActive(true);
+        //    niveau++;
+        //}
+        //else if (MaxScore > 100 && niveau < 2)
+        //{
+        //    Content.transform.GetChild(0).GetChild(1).gameObject.SetActive(true);
+        //    niveau++;
+        //}
+        //else if (MaxScore > 200 && niveau < 3)
+        //{
+        //    Content.transform.GetChild(0).GetChild(2).gameObject.SetActive(true);
+        //    niveau++;
+        //}
+        //else if (MaxScore > 1000 && niveau < 4)
+        //{
+        //    Content.transform.GetChild(0).GetChild(3).gameObject.SetActive(true);
+        //    niveau++;
+        //}
+        //else if (MaxScore > 10000 && niveau < 5)
+        //{
+        //    Content.transform.GetChild(0).GetChild(4).gameObject.SetActive(true);
+        //    niveau++;
+        //}
+        //else if (MaxScore > 100000 && niveau < 6)
+        //{
+        //    Content.transform.GetChild(0).GetChild(5).gameObject.SetActive(true);
+        //    niveau++;
+        //}
     }
 }
